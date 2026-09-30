@@ -1,33 +1,72 @@
 (() => {
+  const ACCENT = "#a7ef9e";
   const slides = [...document.querySelectorAll(".slide")];
-  const counter = document.getElementById("counter");
+  const pad = (n) => String(n).padStart(2, "0");
+  const curNum = document.getElementById("curNum");
+  const sectionName = document.getElementById("sectionName");
   const progress = document.getElementById("progress");
   const prevBtn = document.getElementById("prev");
   const nextBtn = document.getElementById("next");
-  let current = 0;
+  document.getElementById("totalNum").textContent = pad(slides.length);
 
+  // ---------- Background ----------
+  const terminal = window.createFaultyTerminal(document.getElementById("terminal"), {
+    scale: 1.5,
+    gridMul: [2, 1],
+    digitSize: 1.2,
+    timeScale: 0.5,
+    scanlineIntensity: 0.5,
+    glitchAmount: 1,
+    flickerAmount: 1,
+    noiseAmp: 1,
+    chromaticAberration: 0,
+    dither: 0,
+    curvature: 0.1,
+    tint: ACCENT,
+    mouseReact: true,
+    mouseStrength: 0.5,
+    pageLoadAnimation: true,
+    brightness: 0.7,
+    dpr: 1,
+  });
+
+  // ---------- Title ----------
+  window.createTechText(document.getElementById("techTitle"), {
+    text: "my family",
+    fontFamily: "Geist",
+    fontWeight: 600,
+    fontSize: 260,
+    letterSpacing: -0.06,
+    color: "#ecefe8",
+    accentColor: ACCENT,
+    reveal: "letter",
+    dashLength: 4,
+    dashGap: 2,
+    specks: 15,
+  });
+
+  // ---------- Navigation ----------
+  let current = 0;
   function go(index) {
     index = Math.max(0, Math.min(slides.length - 1, index));
     current = index;
-    slides.forEach((s, i) => {
-      s.classList.toggle("active", i === index);
-      s.classList.toggle("prev", i < index);
-    });
-    counter.textContent = `${index + 1} / ${slides.length}`;
+    slides.forEach((s, i) => s.classList.toggle("active", i === index));
+    const isTitle = slides[index].classList.contains("title-slide");
+    document.body.classList.toggle("on-title", index === 0);
+    terminal?.setBrightness(isTitle ? 0.75 : 0.4);
+    curNum.textContent = pad(index + 1);
+    sectionName.textContent = slides[index].dataset.name || "";
     progress.style.width = `${((index + 1) / slides.length) * 100}%`;
     prevBtn.disabled = index === 0;
     nextBtn.disabled = index === slides.length - 1;
     history.replaceState(null, "", `#${index + 1}`);
   }
-
   const next = () => go(current + 1);
   const prev = () => go(current - 1);
-
   prevBtn.addEventListener("click", prev);
   nextBtn.addEventListener("click", next);
 
   const isTyping = (el) => el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA");
-
   document.addEventListener("keydown", (e) => {
     if (isTyping(document.activeElement)) {
       if (e.key === "Escape") document.activeElement.blur();
@@ -42,15 +81,15 @@
 
   // Click on empty area: right half = next, left half = prev
   document.getElementById("deck").addEventListener("click", (e) => {
-    if (e.target.closest("input, button, a, .converter, .encoder, .logic, .code")) return;
+    if (e.target.closest("input, button, a, .panel, .tech-title")) return;
     if (window.getSelection().toString()) return;
     e.clientX > window.innerWidth / 2 ? next() : prev();
   });
 
-  // Swipe
   let sx = 0, sy = 0;
   document.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
   document.addEventListener("touchend", (e) => {
+    if (e.target.closest(".tech-title")) return;
     const dx = e.changedTouches[0].clientX - sx;
     const dy = e.changedTouches[0].clientY - sy;
     if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) dx < 0 ? next() : prev();
@@ -69,18 +108,18 @@
   addEventListener("hashchange", () => go(fromHash()));
   go(fromHash());
 
-  // ---------- Binary strips ----------
-  const randBits = (n) => Array.from({ length: n }, () => (Math.random() > 0.5 ? 1 : 0)).join("");
-  const strips = [document.getElementById("binaryStrip"), document.getElementById("finalBits")];
-  const tickStrips = () => strips.forEach((el) => (el.textContent = randBits(48)));
-  tickStrips();
-  setInterval(tickStrips, 180);
+  // ---------- Elapsed timer ----------
+  const clock = document.getElementById("clock");
+  const t0 = Date.now();
+  setInterval(() => {
+    const s = Math.floor((Date.now() - t0) / 1000);
+    clock.textContent = `${pad(Math.floor(s / 60))}:${pad(s % 60)}`;
+  }, 1000);
 
   // ---------- Number converter ----------
   const decInput = document.getElementById("decInput");
   const bitsEl = document.getElementById("bits");
   for (let i = 0; i < 16; i++) bitsEl.appendChild(document.createElement("div"));
-
   function convert() {
     let v = Math.floor(Number(decInput.value));
     if (!Number.isFinite(v) || v < 0) v = 0;
@@ -136,45 +175,10 @@
     const btn = document.getElementById(`bit${k}`);
     btn.addEventListener("click", () => {
       state[k] ^= 1;
-      btn.textContent = `${k} = ${state[k]}`;
+      btn.querySelector("b").textContent = state[k];
       btn.setAttribute("aria-pressed", state[k] === 1);
       renderLogic();
     });
   });
   renderLogic();
-
-  // ---------- Background: matrix of bits ----------
-  const canvas = document.getElementById("bg");
-  const ctx = canvas.getContext("2d");
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let cols, drops, fontSize = 16;
-
-  function resize() {
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = innerWidth * dpr;
-    canvas.height = innerHeight * dpr;
-    canvas.style.width = innerWidth + "px";
-    canvas.style.height = innerHeight + "px";
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    cols = Math.ceil(innerWidth / fontSize);
-    drops = Array.from({ length: cols }, () => Math.random() * -innerHeight / fontSize);
-  }
-  resize();
-  addEventListener("resize", resize);
-
-  function draw() {
-    ctx.fillStyle = "rgba(7, 7, 15, 0.12)";
-    ctx.fillRect(0, 0, innerWidth, innerHeight);
-    ctx.font = `${fontSize}px JetBrains Mono, monospace`;
-    for (let i = 0; i < cols; i++) {
-      if (i % 3 !== 0) continue;
-      const y = drops[i] * fontSize;
-      ctx.fillStyle = i % 2 ? "rgba(124, 92, 255, 0.35)" : "rgba(34, 211, 238, 0.28)";
-      ctx.fillText(Math.random() > 0.5 ? "1" : "0", i * fontSize, y);
-      if (y > innerHeight && Math.random() > 0.975) drops[i] = 0;
-      drops[i] += 0.35;
-    }
-    if (!reduce) requestAnimationFrame(draw);
-  }
-  draw();
 })();
