@@ -1,0 +1,12 @@
+{
+  "name": "informatics-presentation",
+  "version": "1.0.0",
+  "description": "Презентация по информатике в виде сайта-слайдов",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Информатика — от бита до ИИ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg"></canvas>
+
+<div class="progress"><div class="progress-bar" id="progress"></div></div>
+
+<main class="deck" id="deck">
+
+  <!-- 1. Титул -->
+  <section class="slide title-slide">
+    <div class="tag">Презентация по информатике</div>
+    <h1 class="mega">
+      <span class="grad">Информатика</span><br>
+      от бита до ИИ
+    </h1>
+    <p class="lead">Как устроен цифровой мир: информация, числа, алгоритмы, компьютеры и сети</p>
+    <div class="binary-strip" id="binaryStrip"></div>
+    <div class="hint">Листай → стрелками, пробелом, свайпом или кликом</div>
+  </section>
+
+  <!-- 2. Что такое информатика -->
+  <section class="slide">
+    <div class="num">01</div>
+    <h2>Что такое <span class="grad">информатика</span>?</h2>
+    <p class="lead">Наука о способах получения, хранения, передачи и обработки информации с помощью компьютеров.</p>
+    <div class="cards four">
+      <div class="card reveal"><div class="icon">📥</div><h3>Получение</h3><p>Датчики, клавиатура, камера, микрофон</p></div>
+      <div class="card reveal"><div class="icon">💾</div><h3>Хранение</h3><p>Память, диски, облако</p></div>
+      <div class="card reveal"><div class="icon">📡</div><h3>Передача</h3><p>Сети, интернет, Wi‑Fi, оптоволокно</p></div>
+      <div class="card reveal"><div class="icon">⚙️</div><h3>Обработка</h3><p>Процессор выполняет алгоритмы</p></div>
+    </div>
+  </section>
+
+  <!-- 3. Информация -->
+  <section class="slide">
+    <div class="num">02</div>
+    <h2>Информация и её <span class="grad">свойства</span></h2>
+    <div class="split">
+      <div>
+        <p class="lead">Информация — сведения об окружающем мире, которые уменьшают неопределённость наших знаний.</p>
+        <blockquote class="reveal">«Информация — это не материя и не энергия»<span>— Норберт Винер</span></blockquote>
+      </div>
+      <ul class="props">
+        <li class="reveal"><b>Объективность</b> — не зависит от чьего‑то мнения</li>
+        <li class="reveal"><b>Достоверность</b> — отражает истинное положение дел</li>
+        <li class="reveal"><b>Полнота</b> — достаточна для принятия решения</li>
+        <li class="reveal"><b>Актуальность</b> — важна в данный момент</li>
+        <li class="reveal"><b>Полезность</b> — решает задачу получателя</li>
+        <li class="reveal"><b>Понятность</b> — выражена на понятном языке</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Единицы -->
+  <section class="slide">
+    <div class="num">03</div>
+    <h2>Бит, байт и <span class="grad">все-все-все</span></h2>
+    <p class="lead"><b>Бит</b> — минимальная единица информации: 0 или 1. Ответ на вопрос «да или нет».</p>
+    <div class="units">
+      <div class="unit reveal"><div class="u-name">1 байт</div><div class="u-val">8 бит</div><div class="u-ex">одна буква</div></div>
+      <div class="unit reveal"><div class="u-name">1 КБ</div><div class="u-val">1024 байт</div><div class="u-ex">страница текста</div></div>
+      <div class="unit reveal"><div class="u-name">1 МБ</div><div class="u-val">1024 КБ</div><div class="u-ex">минута музыки</div></div>
+      <div class="unit reveal"><div class="u-name">1 ГБ</div><div class="u-val">1024 МБ</div><div class="u-ex">фильм</div></div>
+      <div class="unit reveal"><div class="u-name">1 ТБ</div><div class="u-val">1024 ГБ</div><div class="u-ex">жёсткий диск</div></div>
+    </div>
+    <div class="formula reveal">N = 2<sup>i</sup> <span>— формула Хартли: N вариантов кодируются i битами</span></div>
+  </section>
+
+  <!-- 5. Системы счисления -->
+  <section class="slide">
+    <div class="num">04</div>
+    <h2>Системы <span class="grad">счисления</span></h2>
+    <div class="split">
+      <div>
+        <p class="lead">Компьютер «думает» в двоичной системе: у транзистора всего два состояния — есть ток или нет.</p>
+        <div class="expand reveal">
+          13<sub>10</sub> = 1·2³ + 1·2² + 0·2¹ + 1·2⁰ = <b>1101<sub>2</sub></b>
+        </div>
+      </div>
+      <div class="converter reveal">
+        <label for="decInput">Введи число (0–65535)</label>
+        <input id="decInput" type="number" min="0" max="65535" value="2026">
+        <div class="conv-row"><span>BIN</span><code id="outBin"></code></div>
+        <div class="conv-row"><span>OCT</span><code id="outOct"></code></div>
+        <div class="conv-row"><span>HEX</span><code id="outHex"></code></div>
+        <div class="bits" id="bits"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Кодирование -->
+  <section class="slide">
+    <div class="num">05</div>
+    <h2>Кодирование <span class="grad">текста</span></h2>
+    <p class="lead">Каждому символу соответствует число. ASCII — 128 символов, Unicode — больше 150 000, включая кириллицу и эмодзи.</p>
+    <div class="encoder reveal">
+      <input id="textInput" type="text" value="Привет" maxlength="12" aria-label="Текст для кодирования">
+      <div class="chars" id="chars"></div>
+    </div>
+  </section>
+
+  <!-- 7. Алгоритмы -->
+  <section class="slide">
+    <div class="num">06</div>
+    <h2><span class="grad">Алгоритмы</span></h2>
+    <div class="split">
+      <div>
+        <p class="lead">Алгоритм — точная последовательность действий, приводящая к результату. Слово происходит от имени учёного аль‑Хорезми.</p>
+        <div class="chips">
+          <span class="chip reveal">Дискретность</span>
+          <span class="chip reveal">Понятность</span>
+          <span class="chip reveal">Определённость</span>
+          <span class="chip reveal">Результативность</span>
+          <span class="chip reveal">Массовость</span>
+        </div>
+      </div>
+      <svg class="flow reveal" viewBox="0 0 300 380" aria-label="Блок-схема алгоритма">
+        <rect x="95" y="10" width="110" height="40" rx="20" class="f-term"/>
+        <text x="150" y="35">Начало</text>
+        <line x1="150" y1="50" x2="150" y2="75" class="f-line"/>
+        <polygon points="100,75 210,75 200,115 90,115" class="f-io"/>
+        <text x="150" y="100">Ввод n</text>
+        <line x1="150" y1="115" x2="150" y2="140" class="f-line"/>
+        <polygon points="150,140 225,180 150,220 75,180" class="f-cond"/>
+        <text x="150" y="185">n % 2 = 0?</text>
+        <line x1="75" y1="180" x2="40" y2="180" class="f-line"/>
+        <line x1="40" y1="180" x2="40" y2="260" class="f-line"/>
+        <line x1="225" y1="180" x2="260" y2="180" class="f-line"/>
+        <line x1="260" y1="180" x2="260" y2="260" class="f-line"/>
+        <text x="55" y="172" class="f-small">да</text>
+        <text x="245" y="172" class="f-small">нет</text>
+        <rect x="0" y="260" width="95" height="40" class="f-act"/>
+        <text x="47" y="285">«чётное»</text>
+        <rect x="205" y="260" width="95" height="40" class="f-act"/>
+        <text x="252" y="285">«нечётное»</text>
+        <line x1="47" y1="300" x2="47" y2="320" class="f-line"/>
+        <line x1="252" y1="300" x2="252" y2="320" class="f-line"/>
+        <line x1="47" y1="320" x2="252" y2="320" class="f-line"/>
+        <line x1="150" y1="320" x2="150" y2="330" class="f-line"/>
+        <rect x="95" y="330" width="110" height="40" rx="20" class="f-term"/>
+        <text x="150" y="355">Конец</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 8. Логика -->
+  <section class="slide">
+    <div class="num">07</div>
+    <h2>Алгебра <span class="grad">логики</span></h2>
+    <p class="lead">Всё, что делает процессор, собрано из простых логических элементов. Нажми на A и B:</p>
+    <div class="logic reveal">
+      <div class="toggles">
+        <button class="bit-btn" id="bitA" aria-pressed="false">A = 0</button>
+        <button class="bit-btn" id="bitB" aria-pressed="false">B = 0</button>
+      </div>
+      <div class="gates">
+        <div class="gate"><div class="g-name">A И B</div><div class="g-op">AND · ∧</div><div class="g-out" id="gAnd">0</div></div>
+        <div class="gate"><div class="g-name">A ИЛИ B</div><div class="g-op">OR · ∨</div><div class="g-out" id="gOr">0</div></div>
+        <div class="gate"><div class="g-name">НЕ A</div><div class="g-op">NOT · ¬</div><div class="g-out" id="gNot">1</div></div>
+        <div class="gate"><div class="g-name">A ⊕ B</div><div class="g-op">XOR</div><div class="g-out" id="gXor">0</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Архитектура -->
+  <section class="slide">
+    <div class="num">08</div>
+    <h2>Устройство <span class="grad">компьютера</span></h2>
+    <p class="lead">Архитектура фон Неймана (1945): программа и данные хранятся в одной памяти.</p>
+    <div class="arch reveal">
+      <div class="a-box a-in">Ввод<small>клавиатура, мышь</small></div>
+      <div class="a-arrow">→</div>
+      <div class="a-cpu">
+        <div class="a-title">Процессор</div>
+        <div class="a-sub">
+          <div class="a-box">АЛУ<small>вычисления</small></div>
+          <div class="a-box">УУ<small>управление</small></div>
+        </div>
+        <div class="a-bus">⇅ шина</div>
+        <div class="a-box a-mem">Память<small>ОЗУ: программа + данные</small></div>
+      </div>
+      <div class="a-arrow">→</div>
+      <div class="a-box a-out">Вывод<small>монитор, принтер</small></div>
+    </div>
+  </section>
+
+  <!-- 10. Сети -->
+  <section class="slide">
+    <div class="num">09</div>
+    <h2>Сети и <span class="grad">интернет</span></h2>
+    <div class="split">
+      <div>
+        <p class="lead">Интернет — сеть сетей. Данные бьются на пакеты, и каждый пакет находит свой путь к цели.</p>
+        <div class="facts">
+          <div class="fact reveal"><b>IP-адрес</b><span>192.168.0.1 — «почтовый адрес» устройства</span></div>
+          <div class="fact reveal"><b>DNS</b><span>превращает google.com в IP-адрес</span></div>
+          <div class="fact reveal"><b>HTTP(S)</b><span>протокол, по которому открыт этот сайт</span></div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="layer reveal" style="--h:280"><b>Прикладной</b><span>HTTP, DNS, SMTP</span></div>
+        <div class="layer reveal" style="--h:220"><b>Транспортный</b><span>TCP, UDP</span></div>
+        <div class="layer reveal" style="--h:170"><b>Сетевой</b><span>IP</span></div>
+        <div class="layer reveal" style="--h:130"><b>Канальный</b><span>Ethernet, Wi‑Fi</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Программирование -->
+  <section class="slide">
+    <div class="num">10</div>
+    <h2><span class="grad">Программирование</span></h2>
+    <div class="split">
+      <div>
+        <p class="lead">Программа — алгоритм, записанный на языке, понятном компьютеру.</p>
+        <div class="langs">
+          <span class="chip reveal">Python</span>
+          <span class="chip reveal">C++</span>
+          <span class="chip reveal">JavaScript</span>
+          <span class="chip reveal">Java</span>
+          <span class="chip reveal">Pascal</span>
+        </div>
+      </div>
+      <div class="code reveal">
+        <div class="code-head"><i></i><i></i><i></i><span>even.py</span></div>
+<pre><span class="k">def</span> <span class="f">is_even</span>(n):
+    <span class="k">return</span> n % <span class="n">2</span> == <span class="n">0</span>
+
+<span class="k">for</span> i <span class="k">in</span> <span class="f">range</span>(<span class="n">1</span>, <span class="n">6</span>):
+    <span class="f">print</span>(i, <span class="s">"чётное"</span> <span class="k">if</span> <span class="f">is_even</span>(i)
+             <span class="k">else</span> <span class="s">"нечётное"</span>)</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. ИИ -->
+  <section class="slide">
+    <div class="num">11</div>
+    <h2>Искусственный <span class="grad">интеллект</span></h2>
+    <p class="lead">Программы, которые не просто выполняют инструкции, а учатся на данных.</p>
+    <div class="timeline">
+      <div class="t-item reveal"><div class="t-year">1950</div><p>Тест Тьюринга</p></div>
+      <div class="t-item reveal"><div class="t-year">1997</div><p>Deep Blue обыграл Каспарова</p></div>
+      <div class="t-item reveal"><div class="t-year">2012</div><p>Прорыв нейросетей в распознавании изображений</p></div>
+      <div class="t-item reveal"><div class="t-year">2016</div><p>AlphaGo победил чемпиона по го</p></div>
+      <div class="t-item reveal"><div class="t-year">2020‑е</div><p>Большие языковые модели</p></div>
+    </div>
+  </section>
+
+  <!-- 13. Итоги -->
+  <section class="slide title-slide">
+    <h2 class="mega"><span class="grad">Спасибо</span><br>за внимание!</h2>
+    <p class="lead">Всё в цифровом мире — это нули и единицы, собранные в алгоритмы.</p>
+    <div class="final-bits" id="finalBits"></div>
+    <div class="hint">Вопросы?</div>
+  </section>
+
+</main>
+
+<nav class="controls">
+  <button id="prev" aria-label="Назад">←</button>
+  <span class="counter" id="counter">1 / 13</span>
+  <button id="next" aria-label="Вперёд">→</button>
+  <button id="fs" aria-label="Полный экран" title="Полный экран (F)">⛶</button>
+</nav>
+
+<script src="app.js"></script>
+</body>
+</html>

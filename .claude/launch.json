@@ -1,0 +1,1 @@
+{"version":"0.0.1","configurations":[{"name":"slides","runtimeExecutable":"node","runtimeArgs":["server.js"],"port":3000}]}
