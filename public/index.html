@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,268 +19,235 @@
   <span class="clock" id="clock">00:00</span>
 </header>
 
+<!--
+  HOW TO EDIT
+  - Text inside <mark>...</mark> is a placeholder: replace it with your own words and remove the <mark> tags.
+  - Photos go into public/photos/ with the file names shown on the empty frames.
+-->
+
 <main class="deck" id="deck">
 
-  <!-- 1 -->
-  <section class="slide title-slide" data-name="Титул">
+  <!-- 1. Title -->
+  <section class="slide title-slide" data-name="Title">
     <div class="title-meta">
-      <span>[ презентация ]</span>
-      <span>информатика · 2026</span>
+      <span>[ english project ]</span>
+      <span><mark>Your Name</mark> · form <mark>8A</mark> · 2026</span>
     </div>
     <div class="tech-title" id="techTitle"></div>
     <div class="title-foot">
-      <p>Как устроен цифровой мир — от одного бита до искусственного интеллекта</p>
-      <span class="kbd-hint"><kbd>→</kbd> далее&nbsp;&nbsp;<kbd>F</kbd> полный экран</span>
+      <p>A short story about the people who made me who I am.</p>
+      <span class="kbd-hint"><kbd>→</kbd> next&nbsp;&nbsp;<kbd>F</kbd> fullscreen</span>
     </div>
   </section>
 
-  <!-- 2 -->
-  <section class="slide" data-name="Информатика">
+  <!-- 2. About me -->
+  <section class="slide" data-name="About me">
     <div class="s-index">01</div>
-    <h2>Что такое <em>информатика</em></h2>
-    <p class="lead">Наука о способах получения, хранения, передачи и обработки информации с помощью компьютеров.</p>
-    <div class="cells four">
-      <div class="cell reveal"><span class="c-id">01</span><h3>Получение</h3><p>Датчики, клавиатура, камера, микрофон</p></div>
-      <div class="cell reveal"><span class="c-id">02</span><h3>Хранение</h3><p>Оперативная память, диски, облако</p></div>
-      <div class="cell reveal"><span class="c-id">03</span><h3>Передача</h3><p>Сети, интернет, Wi‑Fi, оптоволокно</p></div>
-      <div class="cell reveal"><span class="c-id">04</span><h3>Обработка</h3><p>Процессор выполняет алгоритмы</p></div>
-    </div>
-  </section>
-
-  <!-- 3 -->
-  <section class="slide" data-name="Информация">
-    <div class="s-index">02</div>
-    <h2>Информация и её <em>свойства</em></h2>
     <div class="split">
       <div>
-        <p class="lead">Сведения об окружающем мире, которые уменьшают неопределённость наших знаний.</p>
-        <blockquote class="reveal">«Информация — это не материя и не энергия»<cite>Норберт Винер</cite></blockquote>
+        <h2>Hello, I'm <em><mark>Name</mark></em></h2>
+        <p class="lead">I am <mark>14</mark> years old and I live in <mark>Moscow</mark> with my family. Today I want to tell you about the most important people in my life.</p>
+        <div class="tags">
+          <span class="reveal">student</span>
+          <span class="reveal"><mark>gamer</mark></span>
+          <span class="reveal"><mark>football fan</mark></span>
+          <span class="reveal">big brother</span>
+        </div>
+      </div>
+      <figure class="portrait reveal">
+        <img src="photos/me.jpg" alt="Me" onerror="this.remove()">
+        <figcaption>photos/me.jpg</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 3. Family tree -->
+  <section class="slide" data-name="Family tree">
+    <div class="s-index">02</div>
+    <h2>Our <em>family tree</em></h2>
+    <p class="lead">There are <mark>five</mark> people in my family, and three generations of us get together for every holiday.</p>
+    <div class="tree reveal">
+      <div class="gen">
+        <span class="gen-label">gen 1</span>
+        <div class="node">Grandma <small><mark>Anna</mark></small></div>
+        <div class="node">Grandpa <small><mark>Peter</mark></small></div>
+      </div>
+      <div class="gen">
+        <span class="gen-label">gen 2</span>
+        <div class="node">Mum <small><mark>Elena</mark></small></div>
+        <div class="node">Dad <small><mark>Alex</mark></small></div>
+      </div>
+      <div class="gen">
+        <span class="gen-label">gen 3</span>
+        <div class="node me">Me <small><mark>Name</mark></small></div>
+        <div class="node">Sister <small><mark>Mary</mark></small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Mum -->
+  <section class="slide" data-name="Mum">
+    <div class="s-index">03</div>
+    <div class="split person">
+      <figure class="portrait reveal">
+        <img src="photos/mum.jpg" alt="My mum" onerror="this.remove()">
+        <figcaption>photos/mum.jpg</figcaption>
+      </figure>
+      <div>
+        <h2>My <em>mum</em></h2>
+        <p class="lead">My mum's name is <mark>Elena</mark>. She is <mark>kind, patient and very funny</mark>. She always knows how to cheer me up.</p>
+        <ol class="list">
+          <li class="reveal"><b>Job</b><span><mark>She works as a doctor</mark></span></li>
+          <li class="reveal"><b>Hobby</b><span><mark>She loves cooking and gardening</mark></span></li>
+          <li class="reveal"><b>Best at</b><span><mark>Making the best pancakes in the world</mark></span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Dad -->
+  <section class="slide" data-name="Dad">
+    <div class="s-index">04</div>
+    <div class="split person">
+      <figure class="portrait reveal">
+        <img src="photos/dad.jpg" alt="My dad" onerror="this.remove()">
+        <figcaption>photos/dad.jpg</figcaption>
+      </figure>
+      <div>
+        <h2>My <em>dad</em></h2>
+        <p class="lead">My dad's name is <mark>Alex</mark>. He is <mark>clever, strong and a little bit strict</mark>, but he always helps me when I need it.</p>
+        <ol class="list">
+          <li class="reveal"><b>Job</b><span><mark>He is an engineer</mark></span></li>
+          <li class="reveal"><b>Hobby</b><span><mark>He enjoys fishing and fixing things</mark></span></li>
+          <li class="reveal"><b>Best at</b><span><mark>Telling jokes that nobody understands</mark></span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Sister -->
+  <section class="slide" data-name="Sister">
+    <div class="s-index">05</div>
+    <div class="split person">
+      <figure class="portrait reveal">
+        <img src="photos/sister.jpg" alt="My sister" onerror="this.remove()">
+        <figcaption>photos/sister.jpg</figcaption>
+      </figure>
+      <div>
+        <h2>My <em><mark>little sister</mark></em></h2>
+        <p class="lead">Her name is <mark>Mary</mark> and she is <mark>9</mark>. Sometimes we argue, but she is my best friend and I would do anything for her.</p>
+        <ol class="list">
+          <li class="reveal"><b>School</b><span><mark>She is in the 3rd form</mark></span></li>
+          <li class="reveal"><b>Hobby</b><span><mark>She goes to dance classes</mark></span></li>
+          <li class="reveal"><b>Best at</b><span><mark>Drawing cats on everything</mark></span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Grandparents -->
+  <section class="slide" data-name="Grandparents">
+    <div class="s-index">06</div>
+    <h2>My <em>grandparents</em></h2>
+    <p class="lead">My grandparents live in <mark>a small village near Tula</mark>. We visit them <mark>every summer</mark>.</p>
+    <div class="cells two">
+      <div class="cell reveal">
+        <span class="c-id">grandma</span>
+        <h3 class="big"><mark>Anna</mark></h3>
+        <p><mark>She is a retired teacher. She bakes amazing pies and knows a story about everything.</mark></p>
+      </div>
+      <div class="cell reveal">
+        <span class="c-id">grandpa</span>
+        <h3 class="big"><mark>Peter</mark></h3>
+        <p><mark>He loves his garden and chess. He taught me how to ride a bike and how to lose with dignity.</mark></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Numbers -->
+  <section class="slide" data-name="In numbers">
+    <div class="s-index">07</div>
+    <h2>My family <em>in numbers</em></h2>
+    <div class="cells four stats">
+      <div class="cell reveal"><span class="stat"><mark>5</mark></span><p>people under one roof</p></div>
+      <div class="cell reveal"><span class="stat">3</span><p>generations</p></div>
+      <div class="cell reveal"><span class="stat"><mark>1</mark></span><p>very lazy cat named <mark>Barsik</mark></p></div>
+      <div class="cell reveal"><span class="stat"><mark>∞</mark></span><p>cups of tea every evening</p></div>
+    </div>
+  </section>
+
+  <!-- 9. A typical day -->
+  <section class="slide" data-name="Our day">
+    <div class="s-index">08</div>
+    <h2>A day in <em>our family</em></h2>
+    <p class="lead">Everybody is busy, but we always find time for each other.</p>
+    <div class="timeline">
+      <div class="t-item reveal"><div class="t-year">7:00</div><p>We have breakfast together</p></div>
+      <div class="t-item reveal"><div class="t-year">8:00</div><p>School for us, work for our parents</p></div>
+      <div class="t-item reveal"><div class="t-year">17:00</div><p>Homework, clubs and sports</p></div>
+      <div class="t-item reveal"><div class="t-year">19:00</div><p>Family dinner and talking about the day</p></div>
+      <div class="t-item reveal"><div class="t-year">21:00</div><p>A film or a board game</p></div>
+    </div>
+  </section>
+
+  <!-- 10. Traditions -->
+  <section class="slide" data-name="Traditions">
+    <div class="s-index">09</div>
+    <div class="split">
+      <div>
+        <h2>Our <em>traditions</em></h2>
+        <p class="lead">Traditions make us a team. These are the things we always do together.</p>
       </div>
       <ol class="list">
-        <li class="reveal"><b>Объективность</b><span>не зависит от чьего‑то мнения</span></li>
-        <li class="reveal"><b>Достоверность</b><span>отражает истинное положение дел</span></li>
-        <li class="reveal"><b>Полнота</b><span>достаточна для принятия решения</span></li>
-        <li class="reveal"><b>Актуальность</b><span>важна в данный момент</span></li>
-        <li class="reveal"><b>Полезность</b><span>решает задачу получателя</span></li>
-        <li class="reveal"><b>Понятность</b><span>выражена на понятном языке</span></li>
+        <li class="reveal"><b>Sunday pancakes</b><span><mark>Mum cooks, Dad eats the most</mark></span></li>
+        <li class="reveal"><b>Summer trips</b><span><mark>Every year we go to the sea or to the countryside</mark></span></li>
+        <li class="reveal"><b>New Year's Eve</b><span><mark>We decorate the tree and make wishes at midnight</mark></span></li>
+        <li class="reveal"><b>Birthdays</b><span><mark>The birthday person chooses the plan for the whole day</mark></span></li>
+        <li class="reveal"><b>Game nights</b><span><mark>Monopoly, and nobody is allowed to be upset</mark></span></li>
       </ol>
     </div>
   </section>
 
-  <!-- 4 -->
-  <section class="slide" data-name="Единицы">
-    <div class="s-index">03</div>
-    <h2>Бит, байт и <em>дальше</em></h2>
-    <p class="lead"><b>Бит</b> — минимальная единица информации: 0 или 1. Ответ на вопрос «да или нет».</p>
-    <div class="cells five">
-      <div class="cell reveal"><span class="c-id">× 8 бит</span><h3 class="big">1 Б</h3><p>одна буква</p></div>
-      <div class="cell reveal"><span class="c-id">× 1024 Б</span><h3 class="big">1 КБ</h3><p>страница текста</p></div>
-      <div class="cell reveal"><span class="c-id">× 1024 КБ</span><h3 class="big">1 МБ</h3><p>минута музыки</p></div>
-      <div class="cell reveal"><span class="c-id">× 1024 МБ</span><h3 class="big">1 ГБ</h3><p>фильм</p></div>
-      <div class="cell reveal"><span class="c-id">× 1024 ГБ</span><h3 class="big">1 ТБ</h3><p>жёсткий диск</p></div>
-    </div>
-    <div class="formula reveal"><span class="f-main">N = 2<sup>i</sup></span><span class="f-note">формула Хартли — N вариантов кодируются i битами</span></div>
-  </section>
-
-  <!-- 5 -->
-  <section class="slide" data-name="Системы счисления">
-    <div class="s-index">04</div>
-    <h2>Системы <em>счисления</em></h2>
-    <div class="split">
-      <div>
-        <p class="lead">Компьютер считает в двоичной системе: у транзистора всего два состояния — есть ток или нет.</p>
-        <div class="expand reveal">13<sub>10</sub> = 1·2³ + 1·2² + 0·2¹ + 1·2⁰ = <b>1101<sub>2</sub></b></div>
-      </div>
-      <div class="panel reveal">
-        <div class="panel-head"><span>converter.exe</span><span>0 — 65535</span></div>
-        <input id="decInput" type="number" min="0" max="65535" value="2026" aria-label="Десятичное число">
-        <div class="conv-row"><span>BIN</span><code id="outBin"></code></div>
-        <div class="conv-row"><span>OCT</span><code id="outOct"></code></div>
-        <div class="conv-row"><span>HEX</span><code id="outHex"></code></div>
-        <div class="bits" id="bits"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6 -->
-  <section class="slide" data-name="Кодирование">
-    <div class="s-index">05</div>
-    <h2>Кодирование <em>текста</em></h2>
-    <p class="lead">Каждому символу соответствует число. ASCII — 128 символов, Unicode — больше 150 000, включая кириллицу и эмодзи.</p>
-    <div class="panel reveal">
-      <div class="panel-head"><span>encoder.exe</span><span>UTF · Unicode</span></div>
-      <input id="textInput" type="text" value="Семья" maxlength="12" aria-label="Текст для кодирования">
-      <div class="chars" id="chars"></div>
-    </div>
-  </section>
-
-  <!-- 7 -->
-  <section class="slide" data-name="Алгоритмы">
-    <div class="s-index">06</div>
-    <h2><em>Алгоритмы</em></h2>
-    <div class="split">
-      <div>
-        <p class="lead">Точная последовательность действий, приводящая к результату. Слово происходит от имени учёного аль‑Хорезми.</p>
-        <div class="tags">
-          <span class="reveal">дискретность</span>
-          <span class="reveal">понятность</span>
-          <span class="reveal">определённость</span>
-          <span class="reveal">результативность</span>
-          <span class="reveal">массовость</span>
-        </div>
-      </div>
-      <svg class="flow reveal" viewBox="0 0 300 380" aria-label="Блок-схема: проверка числа на чётность">
-        <rect x="95" y="10" width="110" height="40" rx="20" class="f-term"/>
-        <text x="150" y="35">начало</text>
-        <line x1="150" y1="50" x2="150" y2="75" class="f-line"/>
-        <polygon points="100,75 210,75 200,115 90,115" class="f-box"/>
-        <text x="150" y="100">ввод n</text>
-        <line x1="150" y1="115" x2="150" y2="140" class="f-line"/>
-        <polygon points="150,140 225,180 150,220 75,180" class="f-cond"/>
-        <text x="150" y="185">n % 2 = 0 ?</text>
-        <polyline points="75,180 40,180 40,260" class="f-line"/>
-        <polyline points="225,180 260,180 260,260" class="f-line"/>
-        <text x="55" y="172" class="f-small">да</text>
-        <text x="245" y="172" class="f-small">нет</text>
-        <rect x="0" y="260" width="95" height="40" class="f-box"/>
-        <text x="47" y="285">«чётное»</text>
-        <rect x="205" y="260" width="95" height="40" class="f-box"/>
-        <text x="252" y="285">«нечётное»</text>
-        <polyline points="47,300 47,320 252,320 252,300" class="f-line"/>
-        <line x1="150" y1="320" x2="150" y2="330" class="f-line"/>
-        <rect x="95" y="330" width="110" height="40" rx="20" class="f-term"/>
-        <text x="150" y="355">конец</text>
-      </svg>
-    </div>
-  </section>
-
-  <!-- 8 -->
-  <section class="slide" data-name="Логика">
-    <div class="s-index">07</div>
-    <h2>Алгебра <em>логики</em></h2>
-    <p class="lead">Всё, что делает процессор, собрано из простых логических элементов. Переключи A и B:</p>
-    <div class="panel reveal">
-      <div class="panel-head"><span>gates.exe</span><span>boolean</span></div>
-      <div class="toggles">
-        <button class="bit-btn" id="bitA" aria-pressed="false"><span>A</span><b>0</b></button>
-        <button class="bit-btn" id="bitB" aria-pressed="false"><span>B</span><b>0</b></button>
-      </div>
-      <div class="cells four gates">
-        <div class="cell"><span class="c-id">AND · ∧</span><h3>A и B</h3><div class="g-out" id="gAnd">0</div></div>
-        <div class="cell"><span class="c-id">OR · ∨</span><h3>A или B</h3><div class="g-out" id="gOr">0</div></div>
-        <div class="cell"><span class="c-id">NOT · ¬</span><h3>не A</h3><div class="g-out" id="gNot">1</div></div>
-        <div class="cell"><span class="c-id">XOR · ⊕</span><h3>A xor B</h3><div class="g-out" id="gXor">0</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9 -->
-  <section class="slide" data-name="Архитектура">
-    <div class="s-index">08</div>
-    <h2>Устройство <em>компьютера</em></h2>
-    <p class="lead">Архитектура фон Неймана, 1945: программа и данные хранятся в одной памяти.</p>
-    <div class="arch reveal">
-      <div class="a-box"><span class="c-id">input</span>Ввод<small>клавиатура, мышь</small></div>
-      <div class="a-arrow"></div>
-      <div class="a-cpu">
-        <span class="c-id">cpu</span>
-        <div class="a-sub">
-          <div class="a-box">АЛУ<small>вычисления</small></div>
-          <div class="a-box">УУ<small>управление</small></div>
-        </div>
-        <div class="a-bus">шина данных</div>
-        <div class="a-box">Память<small>программа + данные</small></div>
-      </div>
-      <div class="a-arrow"></div>
-      <div class="a-box"><span class="c-id">output</span>Вывод<small>монитор, принтер</small></div>
-    </div>
-  </section>
-
-  <!-- 10 -->
-  <section class="slide" data-name="Сети">
-    <div class="s-index">09</div>
-    <h2>Сети и <em>интернет</em></h2>
-    <div class="split">
-      <div>
-        <p class="lead">Интернет — сеть сетей. Данные бьются на пакеты, и каждый пакет находит свой путь к цели.</p>
-        <ol class="list">
-          <li class="reveal"><b>IP-адрес</b><span>«почтовый адрес» устройства</span></li>
-          <li class="reveal"><b>DNS</b><span>превращает имя сайта в IP-адрес</span></li>
-          <li class="reveal"><b>HTTPS</b><span>протокол, по которому открыт этот сайт</span></li>
-        </ol>
-      </div>
-      <div class="stack">
-        <div class="layer reveal"><span class="c-id">L4</span><b>Прикладной</b><code>HTTP · DNS · SMTP</code></div>
-        <div class="layer reveal"><span class="c-id">L3</span><b>Транспортный</b><code>TCP · UDP</code></div>
-        <div class="layer reveal"><span class="c-id">L2</span><b>Сетевой</b><code>IP</code></div>
-        <div class="layer reveal"><span class="c-id">L1</span><b>Канальный</b><code>Ethernet · Wi‑Fi</code></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 11 -->
-  <section class="slide" data-name="Программирование">
+  <!-- 11. What family means -->
+  <section class="slide quote-slide" data-name="Family means">
     <div class="s-index">10</div>
-    <h2><em>Программирование</em></h2>
-    <div class="split">
-      <div>
-        <p class="lead">Программа — алгоритм, записанный на языке, понятном компьютеру.</p>
-        <div class="tags">
-          <span class="reveal">python</span>
-          <span class="reveal">c++</span>
-          <span class="reveal">javascript</span>
-          <span class="reveal">java</span>
-          <span class="reveal">pascal</span>
-        </div>
-      </div>
-      <div class="panel code reveal">
-        <div class="panel-head"><span>even.py</span><span>python 3</span></div>
-<pre><span class="k">def</span> <span class="f">is_even</span>(n):
-    <span class="k">return</span> n % <span class="n">2</span> == <span class="n">0</span>
-
-<span class="k">for</span> i <span class="k">in</span> <span class="f">range</span>(<span class="n">1</span>, <span class="n">6</span>):
-    <span class="f">print</span>(i, <span class="s">"чётное"</span> <span class="k">if</span> <span class="f">is_even</span>(i)
-             <span class="k">else</span> <span class="s">"нечётное"</span>)</pre>
-      </div>
-    </div>
+    <blockquote class="big-quote reveal">Family is not an important thing. <em>It's everything.</em><cite>Michael J. Fox</cite></blockquote>
+    <p class="lead">For me, family means <mark>love, support and people who are always on my side</mark>. I'm proud of my family and I'm happy to be a part of it.</p>
   </section>
 
-  <!-- 12 -->
-  <section class="slide" data-name="ИИ">
-    <div class="s-index">11</div>
-    <h2>Искусственный <em>интеллект</em></h2>
-    <p class="lead">Программы, которые не просто выполняют инструкции, а учатся на данных.</p>
-    <div class="timeline">
-      <div class="t-item reveal"><div class="t-year">1950</div><p>Тест Тьюринга</p></div>
-      <div class="t-item reveal"><div class="t-year">1997</div><p>Deep Blue обыграл Каспарова</p></div>
-      <div class="t-item reveal"><div class="t-year">2012</div><p>Прорыв нейросетей в распознавании изображений</p></div>
-      <div class="t-item reveal"><div class="t-year">2016</div><p>AlphaGo победил чемпиона по го</p></div>
-      <div class="t-item reveal"><div class="t-year">2020‑е</div><p>Большие языковые модели</p></div>
+  <!-- 12. Gallery -->
+  <section class="slide gallery-slide" data-name="Gallery">
+    <div class="gallery-head">
+      <div class="s-index">11</div>
+      <h2>Family <em>album</em></h2>
+      <span class="gallery-hint">drag · scroll · click to open · <kbd>esc</kbd> back to slides</span>
     </div>
+    <div class="gallery" id="gallery"></div>
   </section>
 
-  <!-- 13 -->
-  <section class="slide title-slide end-slide" data-name="Конец">
-    <div class="title-meta"><span>[ конец ]</span><span>EOF</span></div>
-    <h2 class="end-title">Спасибо <em>за внимание</em></h2>
+  <!-- 13. End -->
+  <section class="slide title-slide end-slide" data-name="The end">
+    <div class="title-meta"><span>[ the end ]</span><span>EOF</span></div>
+    <h2 class="end-title">Thank you <em>for listening</em></h2>
     <div class="title-foot">
-      <p>Всё в цифровом мире — это нули и единицы, собранные в алгоритмы.</p>
-      <span class="kbd-hint">вопросы?<span class="caret"></span></span>
+      <p>Any questions about my family?</p>
+      <span class="kbd-hint">questions?<span class="caret"></span></span>
     </div>
   </section>
 
 </main>
 
 <nav class="controls">
-  <button id="prev" aria-label="Назад">←</button>
+  <button id="prev" aria-label="Previous slide">←</button>
   <span class="counter"><b id="curNum">01</b> / <span id="totalNum">13</span></span>
-  <button id="next" aria-label="Вперёд">→</button>
-  <button id="fs" aria-label="Полный экран" title="Полный экран (F)">⤢</button>
+  <button id="next" aria-label="Next slide">→</button>
+  <button id="fs" aria-label="Fullscreen" title="Fullscreen (F)">⤢</button>
 </nav>
 <div class="progress"><div class="progress-bar" id="progress"></div></div>
 
 <script src="terminal.js"></script>
 <script src="techtext.js"></script>
 <script src="app.js"></script>
+<script type="module" src="gallery.js"></script>
 </body>
 </html>
