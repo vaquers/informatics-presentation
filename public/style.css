@@ -525,9 +525,11 @@ mark {
 @keyframes flex-carousel-reveal { from { opacity: 0; } to { opacity: 1; } }
 
 /* ---------- Pets ---------- */
-.pet { grid-template-columns: minmax(0, 0.85fr) 1.15fr; }
+.pet-slide > * { max-width: none; }
+.pet { grid-template-columns: minmax(0, 0.62fr) 1.38fr; gap: 24px; }
+.pet > div:first-child { max-width: 560px; }
 .pet h2 { margin: 14px 0 20px; }
-.pet-carousel { height: min(72vh, 660px); min-height: 360px; position: relative; }
+.pet-carousel { height: min(82vh, 900px); min-height: 380px; position: relative; }
 
 .circular-carousel {
   --cc-fade: #000000;

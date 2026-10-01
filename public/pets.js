@@ -17,6 +17,7 @@ const PETS = {
   ],
 };
 
+const ASPECT = 0.75;
 const started = new Set();
 
 // Each ring is built the first time its slide is shown, so the intro plays in front of the audience
@@ -25,17 +26,24 @@ function maybeStart() {
     const pet = root.dataset.pet;
     if (started.has(pet)) return;
     started.add(pet);
+    // Size the cards from the space available, so the ring fills its half of the slide
+    const ring = Math.max(8, PETS[pet].length); // matches minCards below
+    const gap = 26;
+    const byWidth = (root.clientWidth * 0.94 * Math.PI) / ring - gap;
+    const byHeight = (root.clientHeight - 76) * 0.82 * ASPECT;
+    const cardWidth = Math.round(Math.max(200, Math.min(byWidth, byHeight, 560)));
     createCircularCarousel(root, {
       items: PETS[pet].map((p) => ({ ...p, alt: p.title })),
       preset: "cylinder",
       intro: "rise",
-      cardWidth: 240,
-      aspectRatio: 0.75,
-      gap: 22,
+      cardWidth,
+      aspectRatio: ASPECT,
+      gap,
       speed: 14,
       minCards: 8,
       cornerRadius: 0,
       fadeColor: "#030503",
+      maxFit: 2.5,
       captions: true,
     });
   });

@@ -48,8 +48,7 @@ export function createCircularCarousel(root, opts = {}) {
     ...opts,
   };
   const original = o.items;
-  let list = original.slice();
-  while (o.minCards && list.length < o.minCards) list = list.concat(original);
+  const list = Array.from({ length: Math.max(original.length, o.minCards || 0) }, (_, i) => original[i % original.length]);
   const realCount = original.length;
 
   const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
@@ -248,7 +247,8 @@ export function createCircularCarousel(root, opts = {}) {
         }
       }
     }
-    const fit = Math.min(1, width / Math.max(maxX - minX, 1), height / Math.max(maxY - minY, 1));
+    // Grow as well as shrink, so the ring keeps filling its box after fullscreen or a resize
+    const fit = Math.min(o.maxFit ?? 1, width / Math.max(maxX - minX, 1), height / Math.max(maxY - minY, 1));
     state.fit = fit;
     state.shift = -((minY + maxY) / 2) * fit - room / 2;
     state.drop = s.axis === "x" ? (rect.width / fit) * 0.55 + s.cardW : (rect.height / fit) * 0.55 + s.cardH;
