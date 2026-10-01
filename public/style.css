@@ -418,6 +418,7 @@ mark {
 .portrait.mini figcaption { font-size: 10px; }
 .cells.three { grid-template-columns: repeat(3, 1fr); }
 .cells.three .cell { min-height: 220px; }
+.cells.three .portrait.mini { width: 120px; flex: none; margin-bottom: 6px; }
 
 /* ---------- Stats ---------- */
 .cells.two { grid-template-columns: 1fr 1fr; }
