@@ -17,6 +17,9 @@ const PHOTOS = [
   { src: "photos/gallery-12.jpg", title: "A big trip together", subtitle: "on the pier" },
   { src: "photos/gallery-13.jpg", title: "A family celebration", subtitle: "with grandma" },
   { src: "photos/gallery-14.jpg", title: "Big family dinner", subtitle: "everyone at one table" },
+  { src: "photos/gallery-15.jpg", title: "Christmas together", subtitle: "Shanti too" },
+  { src: "photos/gallery-16.jpg", title: "Tima", subtitle: "in a festive mood" },
+  { src: "photos/gallery-17.jpg", title: "Me and my cousin", subtitle: "just chilling" },
 ];
 
 const slide = document.querySelector(".gallery-slide");

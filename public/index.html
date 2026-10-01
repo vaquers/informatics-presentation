@@ -21,7 +21,6 @@
 
 <!--
   HOW TO EDIT
-  - Text inside <mark>...</mark> is a placeholder: replace it with your own words and remove the <mark> tags.
   - Photos go into public/photos/ with the file names shown on the empty frames.
 -->
 
@@ -46,13 +45,12 @@
     <div class="split">
       <div>
         <h2>Hello, I'm <em>Ivan</em></h2>
-        <p class="lead">My name is Ivan Trubchik, but everybody calls me Vanya. I'm 16 years old and I'm in the 11th form — a class that specialises in informatics and physics. I'm the youngest of three brothers.</p>
+        <p class="lead">My name is Ivan Trubchik, but everybody calls me Vanya. I'm the youngest in our family. I'm 16 and, I think, I'm a pretty good guy. I'm in the 11th form, in a class that specialises in informatics and physics.</p>
         <div class="tags">
           <span class="reveal">16 years old</span>
           <span class="reveal">form 11 IF</span>
           <span class="reveal">informatics &amp; physics</span>
           <span class="reveal">youngest brother</span>
-          <span class="reveal"><mark>hobby</mark></span>
         </div>
       </div>
       <figure class="portrait square reveal">
@@ -83,11 +81,10 @@
       </figure>
       <div>
         <h2>My <em>mum</em></h2>
-        <p class="lead">My mum's name is Olga, but everybody calls her Olya. She is <mark>kind, patient and caring</mark>. Raising three sons is not easy, but she always finds time for each of us.</p>
+        <p class="lead">My mum's name is Olga, but everybody calls her Olya. She is a doctor, just like my dad. Raising three sons is not easy, but she always finds time for each of us.</p>
         <ol class="list">
-          <li class="reveal"><b>Job</b><span><mark>She works as …</mark></span></li>
-          <li class="reveal"><b>Hobby</b><span><mark>She likes …</mark></span></li>
-          <li class="reveal"><b>Best at</b><span><mark>…</mark></span></li>
+          <li class="reveal"><b>Job</b><span>She is a paediatrician — a children's doctor</span></li>
+          <li class="reveal"><b>Her patients</b><span>Little kids at work — and three big sons at home</span></li>
         </ol>
       </div>
     </div>
@@ -103,11 +100,10 @@
       </figure>
       <div>
         <h2>My <em>dad</em></h2>
-        <p class="lead">My dad's name is Nikolay — Kolya for family. He is <mark>strong, clever and reliable</mark>. He taught all three of us to work hard and to stand up for each other.</p>
+        <p class="lead">My dad's name is Nikolay — Kolya for family. He taught all three of us to work hard and to stand up for each other.</p>
         <ol class="list">
           <li class="reveal"><b>Job</b><span>He is a chief physician — the head doctor of a hospital</span></li>
-          <li class="reveal"><b>Hobby</b><span><mark>He enjoys …</mark></span></li>
-          <li class="reveal"><b>Best at</b><span><mark>…</mark></span></li>
+          <li class="reveal"><b>Family fact</b><span>Two doctors at home, so nobody stays ill for long</span></li>
         </ol>
       </div>
     </div>
@@ -116,39 +112,52 @@
   <!-- 6. Brothers -->
   <section class="slide" data-name="Brothers">
     <div class="s-index">05</div>
-    <h2>My <em>brothers</em></h2>
-    <p class="lead">I have two older brothers. Growing up with them means I'm never bored — and I always have someone to ask for advice.</p>
-    <div class="cells two brothers">
+    <div class="split brothers-split">
+      <div>
+        <h2>My <em>brothers</em></h2>
+        <p class="lead">I have two older brothers, Nikita and Tima. They are really cool guys, and I love them both very much.</p>
+        <ol class="list">
+          <li class="reveal"><b>Nikita · 21</b><span>The oldest of us three</span></li>
+          <li class="reveal"><b>Tima · 17</b><span>Only one year older than me, so we are almost the same age</span></li>
+          <li class="reveal"><b>Me · 16</b><span>The youngest — and, of course, the best</span></li>
+        </ol>
+      </div>
+      <figure class="photo-wide reveal">
+        <img src="photos/brothers.jpg" alt="Me and my two brothers">
+        <figcaption>the three of us</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 7. Grandparents -->
+  <section class="slide" data-name="Grandparents">
+    <div class="s-index">06</div>
+    <h2>My <em>grandparents</em></h2>
+    <p class="lead">My grandparents worked hard all their lives — and two of them spent their careers at school.</p>
+    <div class="cells three">
       <div class="cell reveal">
-        <figure class="portrait mini">
-          <img src="photos/brother-21.jpg" alt="My older brother" onerror="this.remove()">
-          <figcaption>brother-21.jpg</figcaption>
-        </figure>
-        <div>
-          <span class="c-id">the oldest · 21</span>
-          <h3 class="big">Nikita</h3>
-          <p>He is 21, the oldest of us three. <mark>He studies / works as …</mark> He is like a second dad for me.</p>
-        </div>
+        <span class="c-id">dad's side</span>
+        <h3 class="big">Grandpa Tolya</h3>
+        <p>He was a school headmaster.</p>
       </div>
       <div class="cell reveal">
-        <figure class="portrait mini">
-          <img src="photos/brother-17.jpg" alt="My brother" onerror="this.remove()">
-          <figcaption>brother-17.jpg</figcaption>
-        </figure>
-        <div>
-          <span class="c-id">the middle one · 17</span>
-          <h3 class="big">Timofey</h3>
-          <p>He is 17, only one year older than me, so we are almost the same age. <mark>We both like …</mark></p>
-        </div>
+        <span class="c-id">dad's side</span>
+        <h3 class="big">Grandma Valya</h3>
+        <p>She worked as a teacher.</p>
+      </div>
+      <div class="cell reveal">
+        <span class="c-id">mum's side</span>
+        <h3 class="big">Grandma Vera</h3>
+        <p>She worked as a seamstress.</p>
       </div>
     </div>
   </section>
 
-  <!-- 7. Relatives -->
+  <!-- 8. Relatives -->
   <section class="slide" data-name="Relatives">
-    <div class="s-index">06</div>
+    <div class="s-index">07</div>
     <h2>Uncles, aunt <em>&amp; cousins</em></h2>
-    <p class="lead">Our big family doesn't end at home. When everybody gets together, there are eleven of us around the table.</p>
+    <p class="lead">Most of our relatives live in Russia, and we often travel to visit them.</p>
     <div class="cells three">
       <div class="cell reveal">
         <figure class="portrait mini">
@@ -157,17 +166,21 @@
         </figure>
         <span class="c-id">dad's side</span>
         <h3 class="big">Uncle Pasha</h3>
-        <p>My dad's brother, Pavel. <mark>He works as … and he likes …</mark></p>
+        <p>My dad's brother Pavel. He is a deputy director at the National Academy of Sciences.</p>
       </div>
       <div class="cell reveal">
         <span class="c-id">mum's side</span>
-        <h3 class="big">Uncle &amp; aunt</h3>
-        <p>My mum's brother Ruslan and his wife Galya. <mark>They are …</mark></p>
+        <h3 class="big">Uncle Ruslan &amp; aunt Galya</h3>
+        <p>My mum's brother Ruslan makes furniture. He and his wife Galya have three wonderful children.</p>
       </div>
       <div class="cell reveal">
+        <figure class="portrait mini">
+          <img src="photos/andrey.jpg" alt="My cousin Andrey" onerror="this.remove()">
+          <figcaption>andrey.jpg</figcaption>
+        </figure>
         <span class="c-id">mum's side</span>
         <h3 class="big">Three cousins</h3>
-        <p>My uncle and aunt have three children — my cousins Marusya, Polina and Andrey. <mark>They are … years old.</mark></p>
+        <p>Marusya, Polina and Andrey — Uncle Ruslan's children. Andrey is in the photo.</p>
       </div>
     </div>
   </section>
@@ -176,11 +189,11 @@
   <section class="slide pet-slide" data-name="Potap">
     <div class="split pet">
       <div>
-        <div class="s-index">06</div>
+        <div class="s-index">08</div>
         <h2>Meet <em>Potap</em></h2>
-        <p class="lead">Potap is our cat. He is grey, fluffy and very serious — he thinks he is the real boss of the house.</p>
+        <p class="lead">Potap is our Scottish cat. He is grey, fluffy and very serious — he thinks he is the real boss of the house.</p>
         <ol class="list">
-          <li class="reveal"><b>Age</b><span><mark>… years old</mark></span></li>
+          <li class="reveal"><b>Age</b><span>8 or 9 — even we are not sure!</span></li>
           <li class="reveal"><b>Favourite place</b><span>Any chair — especially if somebody wants to sit there</span></li>
           <li class="reveal"><b>Hobbies</b><span>Sleeping, hiding in the garden and inspecting the bathroom</span></li>
         </ol>
@@ -192,11 +205,11 @@
   <section class="slide pet-slide" data-name="Shanti">
     <div class="split pet">
       <div>
-        <div class="s-index">07</div>
+        <div class="s-index">09</div>
         <h2>Meet <em>Shanti</em></h2>
-        <p class="lead">Shanti is our dog. She is black, kind and calm, and she loves every member of our family.</p>
+        <p class="lead">Shanti is our black Labrador. She is kind and calm, and she loves every member of our family.</p>
         <ol class="list">
-          <li class="reveal"><b>Age</b><span><mark>… years old</mark></span></li>
+          <li class="reveal"><b>Age</b><span>8 years old</span></li>
           <li class="reveal"><b>Loves</b><span>Snow, long walks in the fields and treats</span></li>
           <li class="reveal"><b>Favourite pose</b><span>Sleeping on her back with her paws up</span></li>
         </ol>
@@ -212,7 +225,7 @@
     <div class="cells four stats">
       <div class="cell reveal"><span class="stat">30</span><p>people in our family tree</p></div>
       <div class="cell reveal"><span class="stat">3</span><p>brothers — and I'm the youngest</p></div>
-      <div class="cell reveal"><span class="stat">3</span><p>cousins on my mum's side</p></div>
+      <div class="cell reveal"><span class="stat">25</span><p>relatives at one New Year table</p></div>
       <div class="cell reveal"><span class="stat">4</span><p>generations, from great-grandparents to us</p></div>
     </div>
   </section>
@@ -227,7 +240,7 @@
       <div class="t-item reveal"><div class="t-year">8:00</div><p>School for me, studies and work for everyone else</p></div>
       <div class="t-item reveal"><div class="t-year">16:00</div><p>Homework — a lot of physics and informatics</p></div>
       <div class="t-item reveal"><div class="t-year">19:00</div><p>Family dinner and talking about the day</p></div>
-      <div class="t-item reveal"><div class="t-year">21:00</div><p><mark>A film, games or sport</mark></p></div>
+      <div class="t-item reveal"><div class="t-year">21:00</div><p>A film, games or just talking</p></div>
     </div>
   </section>
 
@@ -237,14 +250,13 @@
     <div class="split">
       <div>
         <h2>Our <em>traditions</em></h2>
-        <p class="lead">Traditions make us a team. These are the things we always do together.</p>
+        <p class="lead">We often meet our relatives. Most of them live in Russia, so we travel a lot to see them.</p>
       </div>
       <ol class="list">
-        <li class="reveal"><b>Big family dinners</b><span>All eleven of us together — uncles, aunt and cousins too</span></li>
-        <li class="reveal"><b>New Year's Eve</b><span><mark>We decorate the tree and make wishes at midnight</mark></span></li>
-        <li class="reveal"><b>Birthdays</b><span><mark>The birthday person chooses the plan for the day</mark></span></li>
-        <li class="reveal"><b>Summer trips</b><span><mark>Every year we go …</mark></span></li>
-        <li class="reveal"><b>Brothers' time</b><span><mark>Football, video games or just long talks</mark></span></li>
+        <li class="reveal"><b>Visiting relatives</b><span>Trips to Russia to see our big family</span></li>
+        <li class="reveal"><b>The biggest New Year</b><span>One year about 25 of us got together to celebrate New Year!</span></li>
+        <li class="reveal"><b>New Year at home</b><span>We decorate the tree and take a family photo</span></li>
+        <li class="reveal"><b>Birthdays</b><span>We always celebrate them together</span></li>
       </ol>
     </div>
   </section>

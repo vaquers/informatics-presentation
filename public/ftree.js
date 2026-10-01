@@ -140,15 +140,12 @@
       r.textContent = role;
       label.appendChild(r);
     }
-    const n = document.createElement("span");
-    n.className = "ft-name";
-    if (name) n.textContent = name;
-    else {
-      const m = document.createElement("mark");
-      m.textContent = "name";
-      n.appendChild(m);
+    if (name) {
+      const n = document.createElement("span");
+      n.className = "ft-name";
+      n.textContent = name;
+      label.appendChild(n);
     }
-    label.appendChild(n);
     node.append(img, label);
     stage.appendChild(node);
   }
