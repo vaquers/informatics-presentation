@@ -1,6 +1,6 @@
 // TechText (React Bits) — vanilla canvas port, no dependencies.
 (() => {
-  const LABEL_FONT = "10px 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace";
+  const LABEL_FONT = "10px 'Unbounded', sans-serif";
   const FALLOFF_STEPS = 8;
   const SPRING = 320;
   const DAMPING = 22;

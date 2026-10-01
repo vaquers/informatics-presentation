@@ -33,10 +33,10 @@
   // ---------- Title ----------
   window.createTechText(document.getElementById("techTitle"), {
     text: "my family",
-    fontFamily: "Geist",
-    fontWeight: 600,
+    fontFamily: "Unbounded",
+    fontWeight: 700,
     fontSize: 260,
-    letterSpacing: -0.06,
+    letterSpacing: -0.04,
     color: "#ecefe8",
     accentColor: ACCENT,
     reveal: "letter",

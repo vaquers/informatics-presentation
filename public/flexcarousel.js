@@ -178,9 +178,9 @@ function placeholderCanvas(item, index) {
   ctx.setLineDash([]);
   ctx.fillStyle = "#a7ef9e";
   ctx.textAlign = "center";
-  ctx.font = "italic 400 190px 'Instrument Serif', Georgia, serif";
+  ctx.font = "500 170px 'Unbounded', sans-serif";
   ctx.fillText(String(index + 1).padStart(2, "0"), w / 2, h / 2 + 40);
-  ctx.font = "500 26px 'Geist Mono', monospace";
+  ctx.font = "400 22px 'Unbounded', sans-serif";
   ctx.fillStyle = "rgba(236, 239, 232, 0.6)";
   ctx.fillText("PHOTO", w / 2, h / 2 - 150);
   ctx.fillText(item.src.split("/").pop(), w / 2, h / 2 + 130);
