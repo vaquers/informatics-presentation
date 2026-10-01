@@ -8,6 +8,8 @@
   const prevBtn = document.getElementById("prev");
   const nextBtn = document.getElementById("next");
   document.getElementById("totalNum").textContent = pad(slides.length);
+  // Section numbers follow slide order, so slides can be added or moved freely
+  document.querySelectorAll(".slide .s-index").forEach((el, i) => (el.textContent = pad(i + 1)));
 
   // ---------- Background ----------
   const terminal = window.createFaultyTerminal(document.getElementById("terminal"), {
@@ -72,7 +74,7 @@
   const isTyping = (el) => el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA");
   document.addEventListener("keydown", (e) => {
     // The gallery keeps the arrow keys while it has focus; Esc gives them back
-    if (document.activeElement?.closest?.(".flex-carousel")) return;
+    if (document.activeElement?.closest?.(".flex-carousel, .circular-carousel")) return;
     if (isTyping(document.activeElement)) {
       if (e.key === "Escape") document.activeElement.blur();
       return;
@@ -86,7 +88,7 @@
 
   // Click on empty area: right half = next, left half = prev
   document.getElementById("deck").addEventListener("click", (e) => {
-    if (e.target.closest("input, button, a, .panel, .tech-title, .gallery")) return;
+    if (e.target.closest("input, button, a, .panel, .tech-title, .gallery, .pet-carousel")) return;
     if (window.getSelection().toString()) return;
     e.clientX > window.innerWidth / 2 ? next() : prev();
   });
@@ -94,7 +96,7 @@
   let sx = 0, sy = 0;
   document.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
   document.addEventListener("touchend", (e) => {
-    if (e.target.closest(".tech-title, .gallery")) return;
+    if (e.target.closest(".tech-title, .gallery, .pet-carousel")) return;
     const dx = e.changedTouches[0].clientX - sx;
     const dy = e.changedTouches[0].clientY - sy;
     if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) dx < 0 ? next() : prev();
