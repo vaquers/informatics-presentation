@@ -3,14 +3,20 @@ import { createFlexCarousel } from "./flexcarousel.js";
 // Put your photos into public/photos/ with these names (or change the list).
 // A missing photo shows a numbered placeholder card instead.
 const PHOTOS = [
-  { src: "photos/gallery-01.jpg", title: "Three brothers", subtitle: "21 · 17 · 16" },
-  { src: "photos/gallery-02.jpg", title: "Mum and Dad", subtitle: "our parents" },
-  { src: "photos/gallery-03.jpg", title: "Big family dinner", subtitle: "all eleven of us" },
-  { src: "photos/gallery-04.jpg", title: "With my cousins", subtitle: "mum's side" },
-  { src: "photos/gallery-05.jpg", title: "New Year's Eve", subtitle: "2025" },
-  { src: "photos/gallery-06.jpg", title: "Summer trip", subtitle: "2024" },
-  { src: "photos/gallery-07.jpg", title: "When we were little", subtitle: "old photo" },
-  { src: "photos/gallery-08.jpg", title: "The Trubchik family", subtitle: "2026" },
+  { src: "photos/gallery-01.jpg", title: "All five of us", subtitle: "family photo shoot" },
+  { src: "photos/gallery-02.jpg", title: "When we were little", subtitle: "an old photo" },
+  { src: "photos/gallery-03.jpg", title: "Three brothers", subtitle: "summer at home" },
+  { src: "photos/gallery-04.jpg", title: "Brothers on the road", subtitle: "a bus trip" },
+  { src: "photos/gallery-05.jpg", title: "Meet our cat", subtitle: "the real boss of the house" },
+  { src: "photos/gallery-06.jpg", title: "Mum and Dad", subtitle: "travelling together" },
+  { src: "photos/gallery-07.jpg", title: "Mum in the sky", subtitle: "flying high" },
+  { src: "photos/gallery-08.jpg", title: "Sunset from above", subtitle: "a balloon flight" },
+  { src: "photos/gallery-09.jpg", title: "We landed!", subtitle: "champagne and a certificate" },
+  { src: "photos/gallery-10.jpg", title: "Just the guys", subtitle: "a fun evening" },
+  { src: "photos/gallery-11.jpg", title: "Summer by the water", subtitle: "brothers and friends" },
+  { src: "photos/gallery-12.jpg", title: "A big trip together", subtitle: "on the pier" },
+  { src: "photos/gallery-13.jpg", title: "A family celebration", subtitle: "with grandma" },
+  { src: "photos/gallery-14.jpg", title: "Big family dinner", subtitle: "everyone at one table" },
 ];
 
 const slide = document.querySelector(".gallery-slide");
