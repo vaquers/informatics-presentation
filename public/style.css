@@ -369,52 +369,45 @@ mark {
 .person h2, .split > div > h2 { margin-bottom: 20px; }
 
 /* ---------- Family tree ---------- */
-.tree {
-  display: grid;
-  grid-template-columns: 0.7fr 1.5fr 1.5fr;
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-}
-.branch {
-  background: rgba(3, 5, 3, 0.7);
-  padding: 34px 16px 16px;
-  position: relative;
+.tree-slide { gap: 10px; padding-bottom: 70px; }
+.tree-head { display: grid; grid-template-columns: auto 1fr; align-items: end; column-gap: 32px; row-gap: 10px; }
+.tree-head .s-index { grid-column: 1 / -1; }
+.tree-head h2 { font-size: clamp(30px, 4vw, 56px); }
+.tree-head .lead { font-size: 15px; max-width: 420px; justify-self: end; text-align: right; }
+.family-tree { flex: 1; min-height: 300px; position: relative; overflow: hidden; }
+.ft-stage { position: absolute; left: 50%; top: 50%; transform-origin: center; }
+.ft-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.ft-lines polyline { fill: none; stroke-linejoin: round; }
+.ft-link { stroke: rgba(236, 239, 232, 0.35); stroke-width: 2; }
+.ft-link.ours { stroke: var(--accent); stroke-width: 2.5; filter: drop-shadow(0 0 4px rgba(167, 239, 158, 0.6)); }
+.ft-couple { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 5 4; }
+.ft-node {
+  position: absolute;
+  width: 130px;
+  margin-left: -65px;
   display: flex;
   flex-direction: column;
-  gap: 22px;
-}
-.branch.core { background: rgba(8, 20, 8, 0.75); }
-.branch-label {
-  position: absolute;
-  top: 10px; left: 16px;
-  font: 11px var(--mono);
-  color: var(--dim);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-.branch.core .branch-label { color: var(--accent); }
-.row { display: flex; gap: 8px; position: relative; }
-.row + .row::before {
-  content: "";
-  position: absolute;
-  left: 50%; top: -22px;
-  height: 22px;
-  border-left: 1px dashed var(--accent);
-}
-.node {
-  flex: 1;
-  min-width: 0;
-  padding: 12px 14px;
-  border: 1px solid var(--line-strong);
-  background: var(--panel);
-  font-weight: 500;
-  display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 4px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
 }
-.node small { font: 300 13px var(--sans); color: var(--muted); }
-.node.me { border-color: var(--accent); background: rgba(8, 20, 8, 0.9); box-shadow: 0 0 30px rgba(167, 239, 158, 0.15); }
+.slide.active .ft-node { opacity: 1; transform: none; transition-delay: calc(0.25s + var(--d)); }
+.ft-node img {
+  display: block;
+  filter: brightness(0.82) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
+  transition: filter 0.3s, transform 0.3s var(--ease);
+}
+.ft-node:hover img { filter: brightness(1) drop-shadow(0 0 18px rgba(167, 239, 158, 0.45)); transform: translateY(-4px); }
+.ft-node.lineage img { filter: brightness(0.95) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6)); }
+.ft-label { display: flex; flex-direction: column; align-items: center; line-height: 1.15; }
+.ft-role { font: 13px var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.ft-name { font: 500 21px var(--sans); color: var(--text); letter-spacing: -0.01em; }
+.ft-node.me .ft-role { color: var(--accent); }
+.ft-node.me .ft-name { color: var(--accent); }
+.ft-node.me img { filter: brightness(1.05) drop-shadow(0 0 22px rgba(167, 239, 158, 0.7)); animation: ft-pulse 2.4s ease-in-out infinite; }
+@keyframes ft-pulse { 50% { filter: brightness(1.15) drop-shadow(0 0 34px rgba(167, 239, 158, 0.95)); } }
 
 /* ---------- Brothers ---------- */
 .brothers .cell { flex-direction: row; align-items: stretch; gap: 20px; }
@@ -527,8 +520,9 @@ mark {
   .t-item { padding: 0 0 20px 22px; }
   .t-item::before { top: 8px; left: -4px; }
   .portrait { max-height: 40vh; max-width: 300px; justify-self: start; }
-  .tree, .cells.three { grid-template-columns: 1fr; }
-  .row { flex-wrap: wrap; }
+  .cells.three { grid-template-columns: 1fr; }
+  .tree-head { grid-template-columns: 1fr; }
+  .tree-head .lead { justify-self: start; text-align: left; }
   .gallery-hint { margin-left: 0; }
   .section { display: none; }
   .title-meta, .title-foot { flex-direction: column; align-items: flex-start; }

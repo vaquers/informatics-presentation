@@ -62,41 +62,14 @@
     </div>
   </section>
 
-  <!-- 3. Family tree -->
-  <section class="slide" data-name="Family tree">
-    <div class="s-index">02</div>
-    <h2>Our <em>family tree</em></h2>
-    <p class="lead">There are five of us at home: my mum, my dad and three sons. But our big family is much bigger — it includes my uncles, my aunt and my cousins.</p>
-    <div class="tree reveal">
-      <div class="branch">
-        <span class="branch-label">dad's side</span>
-        <div class="node">Uncle <small>Dad's brother · <mark>name</mark></small></div>
-      </div>
-      <div class="branch core">
-        <span class="branch-label">our family</span>
-        <div class="row">
-          <div class="node">Dad <small><mark>name</mark></small></div>
-          <div class="node">Mum <small><mark>name</mark></small></div>
-        </div>
-        <div class="row">
-          <div class="node">Brother <small><mark>name</mark> · 21</small></div>
-          <div class="node">Brother <small><mark>name</mark> · 17</small></div>
-          <div class="node me">Me <small>Ivan · 16</small></div>
-        </div>
-      </div>
-      <div class="branch">
-        <span class="branch-label">mum's side</span>
-        <div class="row">
-          <div class="node">Uncle <small>Mum's brother · <mark>name</mark></small></div>
-          <div class="node">Aunt <small>his wife · <mark>name</mark></small></div>
-        </div>
-        <div class="row">
-          <div class="node">Cousin <small><mark>name</mark></small></div>
-          <div class="node">Cousin <small><mark>name</mark></small></div>
-          <div class="node">Cousin <small><mark>name</mark></small></div>
-        </div>
-      </div>
+  <!-- 3. Family tree (built by ftree.js) -->
+  <section class="slide tree-slide" data-name="Family tree">
+    <div class="tree-head">
+      <div class="s-index">02</div>
+      <h2>Our <em>family tree</em></h2>
+      <p class="lead">Four generations and 29 people — from my great-grandparents to me and my cousins.</p>
     </div>
+    <div class="family-tree reveal" id="familyTree"></div>
   </section>
 
   <!-- 4. Mum -->
@@ -109,7 +82,7 @@
       </figure>
       <div>
         <h2>My <em>mum</em></h2>
-        <p class="lead">My mum's name is <mark>name</mark>. She is <mark>kind, patient and caring</mark>. Raising three sons is not easy, but she always finds time for each of us.</p>
+        <p class="lead">My mum's name is Olga, but everybody calls her Olya. She is <mark>kind, patient and caring</mark>. Raising three sons is not easy, but she always finds time for each of us.</p>
         <ol class="list">
           <li class="reveal"><b>Job</b><span><mark>She works as …</mark></span></li>
           <li class="reveal"><b>Hobby</b><span><mark>She likes …</mark></span></li>
@@ -129,7 +102,7 @@
       </figure>
       <div>
         <h2>My <em>dad</em></h2>
-        <p class="lead">My dad's name is <mark>name</mark>. He is <mark>strong, clever and reliable</mark>. He taught all three of us to work hard and to stand up for each other.</p>
+        <p class="lead">My dad's name is Nikolay — Kolya for family. He is <mark>strong, clever and reliable</mark>. He taught all three of us to work hard and to stand up for each other.</p>
         <ol class="list">
           <li class="reveal"><b>Job</b><span><mark>He works as …</mark></span></li>
           <li class="reveal"><b>Hobby</b><span><mark>He enjoys …</mark></span></li>
@@ -152,7 +125,7 @@
         </figure>
         <div>
           <span class="c-id">the oldest · 21</span>
-          <h3 class="big"><mark>Name</mark></h3>
+          <h3 class="big">Nikita</h3>
           <p>He is 21, the oldest of us three. <mark>He studies / works as …</mark> He is like a second dad for me.</p>
         </div>
       </div>
@@ -163,7 +136,7 @@
         </figure>
         <div>
           <span class="c-id">the middle one · 17</span>
-          <h3 class="big"><mark>Name</mark></h3>
+          <h3 class="big">Timofey</h3>
           <p>He is 17, only one year older than me, so we are almost the same age. <mark>We both like …</mark></p>
         </div>
       </div>
@@ -179,17 +152,17 @@
       <div class="cell reveal">
         <span class="c-id">dad's side</span>
         <h3 class="big">My uncle</h3>
-        <p>My dad's brother, <mark>name</mark>. <mark>He lives in … and he …</mark></p>
+        <p>My dad's brother, uncle Pasha. <mark>He lives in … and he …</mark></p>
       </div>
       <div class="cell reveal">
         <span class="c-id">mum's side</span>
         <h3 class="big">Uncle &amp; aunt</h3>
-        <p>My mum's brother <mark>name</mark> and his wife <mark>name</mark>. <mark>They are …</mark></p>
+        <p>My mum's brother Ruslan and his wife Galya. <mark>They are …</mark></p>
       </div>
       <div class="cell reveal">
         <span class="c-id">mum's side</span>
         <h3 class="big">Three cousins</h3>
-        <p>My uncle and aunt have three children — my cousins <mark>names</mark>. <mark>They are … years old.</mark></p>
+        <p>My uncle and aunt have three children — my cousins Marusya, Polina and Andrey. <mark>They are … years old.</mark></p>
       </div>
     </div>
   </section>
@@ -199,10 +172,10 @@
     <div class="s-index">07</div>
     <h2>My family <em>in numbers</em></h2>
     <div class="cells four stats">
-      <div class="cell reveal"><span class="stat">11</span><p>people in our big family</p></div>
+      <div class="cell reveal"><span class="stat">29</span><p>people in our family tree</p></div>
       <div class="cell reveal"><span class="stat">3</span><p>brothers — and I'm the youngest</p></div>
       <div class="cell reveal"><span class="stat">3</span><p>cousins on my mum's side</p></div>
-      <div class="cell reveal"><span class="stat">2</span><p>uncles — one on each side</p></div>
+      <div class="cell reveal"><span class="stat">4</span><p>generations, from great-grandparents to us</p></div>
     </div>
   </section>
 
@@ -277,6 +250,7 @@
 
 <script src="terminal.js"></script>
 <script src="techtext.js"></script>
+<script src="ftree.js"></script>
 <script src="app.js"></script>
 <script type="module" src="gallery.js"></script>
 </body>
