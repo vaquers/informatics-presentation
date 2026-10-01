@@ -370,6 +370,7 @@ mark {
 
 /* ---------- Family tree ---------- */
 .tree-slide { gap: 10px; padding-bottom: 70px; }
+.tree-slide > * { max-width: none; }
 .tree-head { display: grid; grid-template-columns: auto 1fr; align-items: end; column-gap: 32px; row-gap: 10px; }
 .tree-head .s-index { grid-column: 1 / -1; }
 .tree-head h2 { font-size: clamp(30px, 4vw, 56px); }

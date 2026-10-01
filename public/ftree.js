@@ -1,7 +1,7 @@
 // Family tree: data + layout. Coordinates are in a fixed design space (W × H)
 // and the whole tree is scaled to fit its container.
 (() => {
-  const W = 1900;
+  const W = 2020;
   const H = 860;
   const ROW = [40, 260, 480, 700]; // top of each generation
   const IMG_H = 92;                // computer picture height
@@ -10,43 +10,44 @@
 
   // id: [role, name, x-centre, generation]
   const P = {
-    ggm: ["great-grandma", "", 712, 0],
-    ggp: ["great-grandpa", "", 852, 0],
+    ggm: ["great-grandma", "", 800, 0],
+    ggp: ["great-grandpa", "", 940, 0],
 
-    gmMaria: ["grandma", "Maria", 435, 1],
-    gpKolya: ["grandpa", "Kolya", 575, 1],
-    gpTolya: ["grandpa", "Tolya", 990, 1],
-    gmValya: ["grandma", "Valya", 1130, 1],
-    gpVanya: ["grandpa", "Vanya", 1360, 1],
-    gmVera: ["grandma", "Vera", 1500, 1],
+    gmMaria: ["grandma", "Maria", 490, 1],
+    gpKolya: ["grandpa", "Kolya", 630, 1],
+    gpTolya: ["grandpa", "Tolya", 1110, 1],
+    gmValya: ["grandma", "Valya", 1250, 1],
+    gpVanya: ["grandpa", "Vanya", 1480, 1],
+    gmVera: ["grandma", "Vera", 1620, 1],
 
     tanya: ["aunt", "Tanya", 170, 2],
     aunt: ["aunt", "", 470, 2],
-    yulya: ["aunt", "Yulya", 700, 2],
-    lena: ["aunt", "Lena", 840, 2],
-    pasha: ["uncle", "Pasha", 990, 2],
-    dad: ["dad", "Kolya", 1130, 2],
-    mum: ["mum", "Olya", 1270, 2],
-    ruslan: ["uncle", "Ruslan", 1590, 2],
-    galya: ["aunt", "Galya", 1730, 2],
+    yulya: ["aunt", "Yulya", 650, 2],
+    lesha: ["uncle", "Lesha", 790, 2],
+    lena: ["aunt", "Lena", 950, 2],
+    pasha: ["uncle", "Pasha", 1110, 2],
+    dad: ["dad", "Kolya", 1250, 2],
+    mum: ["mum", "Olya", 1390, 2],
+    ruslan: ["uncle", "Ruslan", 1710, 2],
+    galya: ["aunt", "Galya", 1850, 2],
 
     denis: ["", "Denis", 100, 3],
     maria: ["", "Maria", 240, 3],
     stas: ["", "Stas", 400, 3],
     maks: ["", "Maks", 540, 3],
-    lada: ["", "Lada", 700, 3],
-    dasha: ["", "Dasha", 840, 3],
-    nikita: ["brother", "Nikita", 1060, 3],
-    timofey: ["brother", "Timofey", 1200, 3],
-    me: ["me", "Vanya", 1340, 3],
-    marusya: ["cousin", "Marusya", 1520, 3],
-    polina: ["cousin", "Polina", 1660, 3],
-    andrey: ["cousin", "Andrey", 1800, 3],
+    lada: ["", "Lada", 720, 3],
+    dasha: ["", "Dasha", 950, 3],
+    nikita: ["brother", "Nikita", 1180, 3],
+    timofey: ["brother", "Timofey", 1320, 3],
+    me: ["me", "Vanya", 1460, 3],
+    marusya: ["cousin", "Marusya", 1640, 3],
+    polina: ["cousin", "Polina", 1780, 3],
+    andrey: ["cousin", "Andrey", 1920, 3],
   };
 
   const COUPLES = [
     ["ggm", "ggp"], ["gmMaria", "gpKolya"], ["gpTolya", "gmValya"], ["gpVanya", "gmVera"],
-    ["dad", "mum"], ["ruslan", "galya"],
+    ["yulya", "lesha"], ["dad", "mum"], ["ruslan", "galya"],
   ];
 
   // [parents (one id or a couple), children]
@@ -57,7 +58,7 @@
     [["gpVanya", "gmVera"], ["mum", "ruslan"]],
     [["tanya"], ["denis", "maria"]],
     [["aunt"], ["stas", "maks"]],
-    [["yulya"], ["lada"]],
+    [["yulya", "lesha"], ["lada"]],
     [["lena"], ["dasha"]],
     [["dad", "mum"], ["nikita", "timofey", "me"]],
     [["ruslan", "galya"], ["marusya", "polina", "andrey"]],
